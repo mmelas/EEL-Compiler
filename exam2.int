@@ -1,0 +1,27 @@
+[0] begin_block P2  
+[1] + a x T_0
+[2] > T_0 y 4
+[3] jump   11
+[4] < z y 6
+[5] jump   10
+[6] + z 1 T_1
+[7] := T_1  c
+[8] := c  x
+[9] jump   4
+[10] jump   15
+[11] par a inout 
+[12] par T_2 ret 
+[13] call P2  
+[14] := T_2  x
+[15] ret c  
+[16] end_block P2  
+[17] begin_block P1  
+[18] ret x  
+[19] end_block P1  
+[20] begin_block exam  
+[21] par a in 
+[22] par T_3 ret 
+[23] call P1  
+[24] := T_3  a
+[25] halt   
+[26] end_block exam  

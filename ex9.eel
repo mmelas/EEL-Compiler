@@ -1,0 +1,52 @@
+program ex9
+declare num1,num2,out,maximum enddeclare
+	
+	//########################
+	//G I V E 	 M A X     N U M  	 I N  	"O U T P U T" 	B Y 	R E F E R E N C E
+	//########################
+	
+	procedure findMax(in x, in y,inout output)
+	declare enddeclare
+		
+		function max(in a, in b)
+		declare enddeclare
+			if a > b then 
+				return a
+			else
+				return b
+			endif
+		endfunction
+
+		output := max(in x,in y);
+	endprocedure
+
+
+	//########################
+	// S E T    0	   O R    1     I N     O U T P U T  
+	// I F     X     I S     G R E A T E R    T H A N    G L O B A L     M A X I M U M
+	//########################
+
+	procedure maxfromMaximum(in x,inout output)
+	declare enddeclare
+		if x >= maximum then 
+			output := 1;
+		else 
+			output := 0;
+		endif
+	endprocedure
+
+	maximum := 100;
+
+	//GIVE 2 NUMBERS AND COMPARE THEM:
+
+	input num1;
+	input num2;
+	call findMax(in num1, in num2, inout out);
+	print out;
+
+	//SEE IF MAX NUMBER IS GREATER THAN MAXIMUM:
+
+	call maxfromMaximum(in out,inout out);
+	print out;
+	
+endprogram
