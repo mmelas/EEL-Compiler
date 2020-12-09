@@ -1,0 +1,16 @@
+[0] begin_block P2  
+[1] := x1  x2
+[2] := y1  y2
+[3] end_block P2  
+[4] begin_block P1  
+[5] := x1  y1
+[6] par A in 
+[7] par B inout 
+[8] call P2  
+[9] end_block P1  
+[10] begin_block exam  
+[11] par A in 
+[12] par B inout 
+[13] call P1  
+[14] halt   
+[15] end_block exam  

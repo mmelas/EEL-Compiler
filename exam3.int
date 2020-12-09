@@ -1,0 +1,22 @@
+[0] begin_block exam3  
+[1] + a x T_0
+[2] > T_0 y 4
+[3] jump   12
+[4] <= i n 6
+[5] jump   11
+[6] + s i T_1
+[7] := T_1  s
+[8] + i 1 T_2
+[9] := T_2  i
+[10] jump   4
+[11] jump   20
+[12] > x y 16
+[13] jump   14
+[14] < x z 16
+[15] jump   18
+[16] := 3  z
+[17] jump   20
+[18] + x y T_3
+[19] := T_3  r
+[20] halt   
+[21] end_block exam3  

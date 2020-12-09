@@ -1,0 +1,15 @@
+program exam
+declare A,B enddeclare
+	procedure P1 (in x1, inout y1)
+
+		procedure P2 (in x2, inout y2)
+			x2 := x1;
+			y2 := y1;
+		endprocedure
+	
+	y1 := x1;
+	call P2(in A, inout B);		
+	endprocedure
+
+call P1(in A, inout B);	
+endprogram

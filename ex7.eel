@@ -1,0 +1,18 @@
+program ex3
+declare a1,a3 enddeclare
+	procedure doIt(inout x)
+		declare a3 enddeclare
+		input a3;
+		if a3 > 10 then
+			x := a3 + 100;
+		else
+			while a3 <= 10
+				x := a3;
+				a3 := a3 + 1;
+			endwhile
+		endif;
+	endprocedure
+
+	call doIt(inout a1);
+	print a1;
+endprogram
