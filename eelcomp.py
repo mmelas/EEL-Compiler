@@ -1,6 +1,3 @@
-#Minas Melas 2484 cse32484
-#Spiros Moschopoulos 2489 cse32489
-
 import sys
 global lexout
 global lines
