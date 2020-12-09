@@ -1,0 +1,27 @@
+program ex8
+declare startFib, endFib, j enddeclare
+
+	//#####################################
+	// F I B O N A C C I 	F U N C T I O N
+	//#####################################
+
+	function fib(in i)
+	declare a, b enddeclare
+		if i < 2 then 
+			return i
+		else
+			a := fib(in (i-2));
+			b := fib(in (i-1));
+			return (a+b)
+		endif
+	endfunction
+
+
+	startFib := 1;
+	endFib := 10;
+	j := startFib;
+	forcase when j<(endFib+1) :
+		print fib(in j);
+		j := j + 1;
+	endforcase
+endprogram
