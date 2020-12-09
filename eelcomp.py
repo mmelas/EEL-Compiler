@@ -14,7 +14,6 @@ def lex():
     global en
     global nextChar
     global lastChar
-    #while(state_0(nextChar) != 'EOF'):
     if(en == 0):
         nextChar = file.read(1)   
     else:
@@ -75,7 +74,6 @@ def state_0(nextChar):
                         lineOfCom,'and never closed until End Of File.')
                     print('line',lineOfCom,':',lines[lineOfCom])
                     exit()
-                    #termatismos tou programmatos ara kai ths loupas
                 else:
                     nextChar = file.read(1)
         elif(nextChar == '/'):
@@ -186,7 +184,7 @@ def state_1(nextChar):
         count += 1
         nextChar = file.read(1)
     
-    token = 'idtk' #to vazw giati an den einai sth lista afou einai alfarithmitiko tha nai idtk
+    token = 'idtk'
     if(strToken in tks):
         token = strToken+'tk'
     lexout = strToken
@@ -402,19 +400,17 @@ def formalparitem():
 
 def statements():
     statement()
-    #lex() #lathos gia to test.txt sto a := a + b; to ; to exoume idi sto token
     while token == 'qmarktk':
         lex()
         if (token == 'idtk' or token == 'iftk'
          or token == 'whiletk' or token == 'exittk'
-         or token == 'switchtk' or token == 'failuretk' #to failuretk ti einai? de to xei sthn grammatikh EEL
+         or token == 'switchtk' or token == 'failuretk' 
          or token == 'calltk' or token == 'returntk'
          or token == 'printtk' or token == 'inputtk' or token == 'repeattk'):
             statement()
-            #lex() #lathos kai auto gia to endif; sto test.txt, to ; to exoume idi sto token ap to endiftk
     if (token == 'idtk' or token == 'iftk'
          or token == 'whiletk' or token == 'exittk'
-         or token == 'switchtk' or token == 'failuretk' #to failuretk ti einai? de to xei sthn grammatikh EEL
+         or token == 'switchtk' or token == 'failuretk'
          or token == 'calltk' or token == 'returntk'
          or token == 'printtk' or token == 'inputtk' or token == 'repeattk'):
         print('expected ";" between statements at line',lineNum)
@@ -495,7 +491,6 @@ def elsePart():
     if(token == 'elsetk'):
         lex()
         statements()
-        #pou tha ginei to epomeno lex?  ---> mesa sto statement pou tha vrei
 
 
 # In[67]:
@@ -605,7 +600,7 @@ def forCaseStat():
             else:
                 print('Expected ":" after condition in for statement at line',lineNum)
                 print('line',lineOfWhen,':',lines[lineOfWhen])
-        if(token == 'endforcasetk'):  #Ekana mia allagh edw kai sto switch paromoia
+        if(token == 'endforcasetk'): 
             lex()
         else:
             print('Found forcase statement at line',lineOfFor,'but endforcase not found')
